@@ -61,7 +61,7 @@ Author URI: http://wpsv.se
  		'label'                 => __( 'Artikel', 'wpsvse' ),
  		'description'           => __( 'Dokumentation', 'wpsvse' ),
  		'labels'                => $labels,
- 		'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'comments', 'revisions' ),
+ 		'supports'              => array( 'title', 'editor', 'author', 'comments', 'custom-fields', 'revisions' ),
  		'taxonomies'            => array( 'wpsvse_doc_cat' ),
  		'hierarchical'          => false,
  		'public'                => true,
