@@ -33,8 +33,9 @@ get_header();
 				    <li role="presentation"><a href="#discuss" aria-controls="discuss" role="tab" data-toggle="tab"><i class="fa fa-comments" aria-hidden="true"></i> Diskutera</a></li>
 						<?php if (class_exists('FrmProEntriesController')) {
 						// Get the form id set as post meta on form page "dokumentredigerare"
-						$the_doc_form_id = wpsvse_get_form_page_id_by_slug('dokumentredigerare'); ?>
-					    <li role="presentation"><?php echo FrmProEntriesController::entry_edit_link(array('id' => $post->ID, 'label' => '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Redigera', 'page_id' => $the_doc_form_id)); ?></li>
+						$the_doc_page_form_id = wpsvse_get_form_page_id_by_slug('dokumentredigerare');
+						$the_doc_form_id = get_post_meta( $the_doc_page_form_id, 'form_id_key')?>
+					    <li role="presentation"><?php echo FrmProEntriesController::entry_edit_link(array('id' => "current", 'label' => '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Redigera', 'page_id' => $the_doc_page_form_id, 'form_id' => $the_doc_form_id)); ?></li>
 						<?php } else {
 							// Fallback if formidablepro is not active ?>
 							<li role="presentation"><?php edit_post_link( '<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Redigera', '', '' ); ?></li>
