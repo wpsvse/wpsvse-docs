@@ -73,7 +73,11 @@ get_header(); ?>
           </div>
         </div>
         <div id="sidebar" class="col-md-3 widget-area" role="complementary">
-      		<?php if ( ! dynamic_sidebar( 'docs-widgets' ) ) : endif; ?>
+          <?php
+					// Load default widgets
+					include ( plugin_dir_path(__FILE__) . '/default-widgets.php');
+					// Dynamic widgets
+					if ( ! dynamic_sidebar( 'docs-widgets' ) ) : endif; ?>
       	</div>
 			</div>
 		</div>
