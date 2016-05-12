@@ -30,16 +30,17 @@ get_header(); ?>
 
             <h2>Artiklar</h2>
 
-            <?php /* Start the Loop */ ?>
-            <?php while ( have_posts() ) : the_post(); ?>
-
               <div class="doc-col">
                	<ul>
+                <?php while ( have_posts() ) : the_post(); ?>
+
                  	<li><a class="doc-permalink" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+
+                <?php endwhile; ?>
                 </ul>
               </div>
 
-            <?php endwhile; else : ?>
+            <?php else : ?>
 
               <div class="doc-col">
                 <p><em><small>Det finns för närvarande inga artiklar under <strong><?php the_archive_title(); ?></strong>. Varför inte <a href="#">skapa en</a></small></em></p>
